@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme: Theme) =>
       maxWidth: 120,
     },
     menuButton: {
-      color: "#f5f5f5",
+      color: "#fff",
     },
   })
 );
@@ -50,9 +50,15 @@ export default function Header(props: HeaderProps) {
               sx={{ flexGrow: 1 }}
             ></Typography>
             {sections.map((section) => (
-              <Button className={classes.menuButton}>{section.title}</Button>
+              <Button 
+                className={classes.menuButton}
+                color={'neutral'}
+                >{section.title}</Button>
             ))}
-            <Button className={classes.menuButton} variant="outlined">
+            <Button 
+              className={classes.menuButton}
+              color={'neutral'} 
+              variant="outlined">
               {" "}
               Pre-Registro
             </Button>

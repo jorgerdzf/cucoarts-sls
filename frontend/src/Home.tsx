@@ -19,6 +19,9 @@ import img2 from "./assets/landing-img-2.png";
 //components
 import Header from "./Header";
 import ServiceCards from "./ServiceCards";
+import ContactForm from "./ContactForm";
+import SocialMedia from "./SocialMedia";
+import Footer from "./Footer";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -38,10 +41,14 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     headerText: {
       color: "#BDC8F0",
+      fontWeight: "bolder !important",
     },
     img2: {
       minHeight: 300,
       backgroundSize: "cover",
+    },
+    links: {
+      color: "#bdc8f0",
     },
   })
 );
@@ -59,7 +66,7 @@ const serviceCards = [
     title: "Art Hunting",
     text: "¿Qué es lo que te está llamando hoy? ¿Quieres crear algo original o quieres buscar ideas? Platícanos tu caso y te ayudamos a hacerlo realidad.",
     imageUrl: "service-img-1.png",
-    button1Title: "Pedir Cotización",
+    button1Title: "Cotizar",
     button1Url: "",
     button2Title: "Ver Galeria",
     button2Url: "",
@@ -68,7 +75,7 @@ const serviceCards = [
     title: "Murales",
     text: "Arte urbano para espacios públicos y privados. Buscamos el artista profesional ideal para tu proyecto y te ayudamos a hacerlo realidad.",
     imageUrl: "service-img-2.png",
-    button1Title: "Llenar Cuestionario",
+    button1Title: "Cotizar",
     button1Url: "",
     button2Title: "Ver Galeria",
     button2Url: "",
@@ -77,7 +84,7 @@ const serviceCards = [
     title: "Producción",
     text: "Para personas o negocios: Organizamos y lanzamos eventos culturales y proyectos en video desde cobertura o entrevistas personales.",
     imageUrl: "service-img-3.png",
-    button1Title: "Llenar Cuestionario",
+    button1Title: "Cotizar",
     button1Url: "",
     button2Title: "Ver Galeria",
     button2Url: "",
@@ -146,8 +153,8 @@ export default function Home() {
           sx={{ pt: 16 }}
         >
           <Grid item xs={6}>
-            <Box sx={{ pl: 8 }}>
-              <Typography variant="h3" className={classes.headerText}>
+            <Box sx={{ pl: 8, textAlign: "left" }}>
+              <Typography variant="h2" className={classes.headerText}>
                 {texts.t1}
               </Typography>
               <br />
@@ -155,7 +162,9 @@ export default function Home() {
                 {texts.t2}
               </Typography>
               <br />
-              <Link href="#">{texts.t3}</Link>
+              <Link href="#" className={classes.links}>
+                {texts.t3}
+              </Link>
             </Box>
           </Grid>
           <Grid item xs={6}>
@@ -165,10 +174,7 @@ export default function Home() {
           </Grid>
         </Grid>
       </Box>
-      <br />
-      <br />
-      <br />
-      <Box className={classes.s1Box}>
+      <Box className={classes.s1Box} sx={{mt: 6}}>
         <Grid
           container
           direction="row"
@@ -176,84 +182,71 @@ export default function Home() {
           alignItems="center"
           sx={{ pt: 2 }}
         >
-          <Grid item>
-            <Typography variant="h5">{texts.t4}</Typography>
-            <br />
-            <Typography variant="body1">{texts.t5}</Typography>
+          <Grid item sx={{ fontStyle: "italic", m: 1 }}>
+            <Typography variant="h4">{texts.t4}</Typography>
+            <Typography variant="h5">{texts.t5}</Typography>
           </Grid>
         </Grid>
       </Box>
-      <br />
-      <br />
-      <br />
-      <Box sx={{ pl: 8 }}>
+      <Box sx={{ pl: 8, pt: 6, textAlign: "left" }}>
         <Typography variant="h4">{texts.t6}</Typography>
-        <br />
         <Typography variant="body1">{texts.t7}</Typography>
-        <br />
         <ServiceCards cards={serviceCards} />
       </Box>
-      <br />
-      <br />
-      <br />
-      <Box sx={{ pl: 8 }}>
-        <Typography variant="h4">{texts.t8}</Typography>
-        <br />
-        <Typography variant="body1">{texts.t9}</Typography>
-        <br />
-        <ImageList sx={{ height: 350 }} cols={3} rowHeight={164}>
-          {galeryImages.map((item) => (
-            <ImageListItem key={item.img}>
-              <img
-                src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
-                srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-                alt={item.title}
-                loading="lazy"
-              />
-            </ImageListItem>
-          ))}
-        </ImageList>
-        <Button variant="outlined">Ver Mas </Button>
+      <Box sx={{ pl: 8, pt: 6 }}>
+        <Box sx={{ textAlign: "left" }}>
+          <Typography variant="h4">{texts.t8}</Typography>
+          <Typography variant="body1">{texts.t9}</Typography>
+          <ImageList sx={{ height: 350 }} cols={3} rowHeight={164}>
+            {galeryImages.map((item) => (
+              <ImageListItem key={item.img}>
+                <img
+                  src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
+                  srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+                  alt={item.title}
+                  loading="lazy"
+                />
+              </ImageListItem>
+            ))}
+          </ImageList>
+        </Box>
+        <Button variant="contained">Ver Mas </Button>
       </Box>
-      <br />
-      <br />
-      <br />
-      <Box sx={{ pl: 8 }}>
-        <Typography variant="h4">{texts.t10}</Typography>
-        <br />
-        <Typography variant="body1">{texts.t11}</Typography>
-        <br />
-        <ImageList sx={{ height: 350 }} cols={3} rowHeight={164}>
-          {portfolioImages.map((item) => (
-            <ImageListItem key={item.img}>
-              <img
-                src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
-                srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-                alt={item.title}
-                loading="lazy"
-              />
-            </ImageListItem>
-          ))}
-        </ImageList>
-        <Button variant="outlined">Ver Mas </Button>
+      <Box sx={{ pl: 8, pt: 6 }}>
+        <Box sx={{ textAlign: "left" }}>
+          <Typography variant="h4">{texts.t10}</Typography>
+          <Typography variant="body1">{texts.t11}</Typography>
+          <ImageList sx={{ height: 350 }} cols={3} rowHeight={164}>
+            {portfolioImages.map((item) => (
+              <ImageListItem key={item.img}>
+                <img
+                  src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
+                  srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+                  alt={item.title}
+                  loading="lazy"
+                />
+              </ImageListItem>
+            ))}
+          </ImageList>
+        </Box>
+        <Button variant="contained">Ver Mas </Button>
       </Box>
-      <br />
-      <br />
-      <br />
-      <Box sx={{ pl: 8 }}>
+      <Box sx={{ pl: 8, pt: 6 }}>
+        <Box sx={{ textAlign: "left" }}>
         <Typography variant="h4">{texts.t12}</Typography>
-        <br />
         <Typography variant="body1">{texts.t13}</Typography>
-        <br />
+        <ContactForm />
+        </Box>
       </Box>
-      <br />
-      <br />
-      <br />
-      <Box sx={{ pl: 8 }}>
+      <Box sx={{ pl: 8, pt: 6 }}>
+        <Box sx={{ textAlign: "left" }}>
         <Typography variant="h4">{texts.t14}</Typography>
-        <br />
         <Typography variant="body1">{texts.t15}</Typography>
-        <br />
+        </Box>
+        <SocialMedia></SocialMedia>
+      </Box>
+      <Box>
+        <Footer></Footer>
       </Box>
     </Container>
   );

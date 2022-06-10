@@ -6,6 +6,7 @@ import {
   CardActions,
   Button,
   Grid,
+  Box,
 } from "@mui/material";
 import React from "react";
 
@@ -31,6 +32,7 @@ export default function ServiceCards(props: CardProps) {
         justifyContent="center"
         alignItems="top"
         spacing={2}
+        padding={2}
       >
         {cards.map((card) => (
           <Grid item>
@@ -49,10 +51,9 @@ export default function ServiceCards(props: CardProps) {
                   {card.text}
                 </Typography>
               </CardContent>
-              <CardActions>
-                <Button size="small">{card.button1Title}</Button>
-                <br/>
-                <Button size="small">{card.button2Title}</Button>
+              <CardActions sx={{justifyContent: 'center', p:1, m:1}}>
+                  <Button size="small" variant='contained'>{card.button1Title}</Button>
+                  <Button size="small" variant='contained'>{card.button2Title}</Button>
               </CardActions>
             </Card>
           </Grid>
