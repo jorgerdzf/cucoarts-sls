@@ -245,7 +245,7 @@ export default function Home() {
         </Box>
         <SocialMedia></SocialMedia>
       </Box>
-      <Box>
+      <Box sx={{ pt: 6 }}>
         <Footer></Footer>
       </Box>
     </Container>
