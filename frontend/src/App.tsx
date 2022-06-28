@@ -3,11 +3,11 @@ import React from 'react';
 import { Routes, Route } from "react-router-dom";
 import './App.css';
 import Contact from './components/Contact';
+import FullGalery from './components/FullGalery';
+import FullPortfolio from './components/FullPortfolio';
 import Privacy from './components/Privacy';
 import Services from './components/Services';
 import Home from './Home';
-import Galery from './shared/Galery';
-import Portfolio from './shared/Portfolio';
 
 declare module '@mui/material/styles' {
   interface Theme {
@@ -61,8 +61,8 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/contact' element={<Contact />} />
-          <Route path='/galery' element={<Galery />} />
-          <Route path='/portfolio' element={<Portfolio />} />
+          <Route path='/galery' element={<FullGalery />} />
+          <Route path='/portfolio' element={<FullPortfolio />} />
           <Route path='/privacy' element={<Privacy />} />
           <Route path='/services' element={<Services />} />
         </Routes>

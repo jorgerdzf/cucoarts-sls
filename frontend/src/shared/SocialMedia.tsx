@@ -11,6 +11,7 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 import MusicNoteIcon from '@mui/icons-material/MusicNote';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import { texts } from "../staticInfo/socialMedia";
+import Link from '@mui/material/Link';
 
 export default function SocialMedia() {
   return (
@@ -20,7 +21,9 @@ export default function SocialMedia() {
         <Typography variant="body1">{texts.t2}</Typography>
         </Box>
       <Box component="form" sx={{mt:6}}>
-        <FacebookIcon sx={{fontSize: 100}}/>
+        <Link href="https://www.facebook.com/cucoarts" target="_blank">
+          <FacebookIcon sx={{fontSize: 100}}/>
+        </Link>
         <InstagramIcon sx={{fontSize: 100}}/>
         <RedditIcon sx={{fontSize: 100}}/>
         <LinkedInIcon sx={{fontSize: 100}}/>

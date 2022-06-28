@@ -94,7 +94,8 @@ export default function Header(props: HeaderProps) {
           ></Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {options.map((option: any, i) => (
-              <Button
+              <>
+                {option.enabled ? (<Button
                 key={i}
                 className={classes.menuButton}
                 color={"neutral"}
@@ -102,7 +103,8 @@ export default function Header(props: HeaderProps) {
                 size="small"
               >
                 {option.title}
-              </Button>
+              </Button>) : (null) }
+              </>
             ))}
           </Box>
           <Button

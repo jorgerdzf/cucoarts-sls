@@ -42,7 +42,7 @@ function EstimateCost() {
                 label={options.fields.description.title}
                 variant="outlined"
                 multiline
-                rows={4}
+                rows={6}
               />
             </FormControl>
             <Button size="large" variant="contained">
