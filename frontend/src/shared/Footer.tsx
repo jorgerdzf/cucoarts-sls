@@ -1,9 +1,6 @@
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-} from "@mui/material";
+import { AppBar, Toolbar, Typography } from "@mui/material";
 import React from "react";
+import { texts } from "../staticInfo/footer";
 
 export default function Footer() {
   return (
@@ -12,20 +9,20 @@ export default function Footer() {
         <Toolbar sx={{ justifyContent: "space-between" }}>
           <div>
             <Typography variant="body1" component="div" sx={{ flexGrow: 1 }}>
-              2022 Cultural Collective México S de RL de CV
+              {texts.t1}
             </Typography>
           </div>
           <div>
             <Typography variant="body2" component="div" sx={{ flexGrow: 1 }}>
-              hello@cucoarts.com
+              {texts.t2}
             </Typography>
           </div>
           <div>
             <Typography variant="body2" component="div" sx={{ flexGrow: 1 }}>
-              Términos y Condiciones
+              {texts.t3}
             </Typography>
             <Typography variant="body2" component="div" sx={{ flexGrow: 1 }}>
-              Aviso de Privacidad
+              {texts.t4}
             </Typography>
           </div>
         </Toolbar>

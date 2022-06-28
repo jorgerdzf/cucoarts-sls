@@ -6,26 +6,15 @@ import {
   CardActions,
   Button,
   Grid,
-  Box,
 } from "@mui/material";
 import React from "react";
+import { cardsContent, texts } from "../staticInfo/services";
 
-interface CardProps {
-  cards: ReadonlyArray<{
-    title: string;
-    text: string;
-    imageUrl: string;
-    button1Title: string;
-    button1Url: string;
-    button2Title: string;
-    button2Url: string;
-  }>;
-}
-
-export default function ServiceCards(props: CardProps) {
-  const { cards } = props;
+export default function ServiceCards() {
   return (
     <React.Fragment>
+      <Typography variant="h4">{texts.t1}</Typography>
+      <Typography variant="body1">{texts.t2}</Typography>
       <Grid
         container
         direction="row"
@@ -34,7 +23,7 @@ export default function ServiceCards(props: CardProps) {
         spacing={2}
         padding={2}
       >
-        {cards.map((card) => (
+        {cardsContent.map((card) => (
           <Grid item>
             <Card sx={{ maxWidth: 300 }}>
               <CardMedia
@@ -51,9 +40,13 @@ export default function ServiceCards(props: CardProps) {
                   {card.text}
                 </Typography>
               </CardContent>
-              <CardActions sx={{justifyContent: 'center', p:1, m:1}}>
-                  <Button size="small" variant='contained'>{card.button1Title}</Button>
-                  <Button size="small" variant='contained'>{card.button2Title}</Button>
+              <CardActions sx={{ justifyContent: "center", p: 1, m: 1 }}>
+                <Button size="small" variant="contained">
+                  {card.button1Title}
+                </Button>
+                <Button size="small" variant="contained">
+                  {card.button2Title}
+                </Button>
               </CardActions>
             </Card>
           </Grid>
