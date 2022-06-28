@@ -14,7 +14,7 @@ function Contact() {
     <Box>
       <ContactForm/>
     </Box>
-    <Footer/>
+    <Footer isMainPage={false}/>
   </>
   )
 }

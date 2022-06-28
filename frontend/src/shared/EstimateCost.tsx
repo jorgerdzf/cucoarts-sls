@@ -1,5 +1,5 @@
-import { Box, Typography, TextField, Button } from '@mui/material';
-import { options, texts } from '../staticInfo/estimateCost';
+import { Box, Typography, TextField, Button, FormControl } from "@mui/material";
+import { options, texts } from "../staticInfo/estimateCost";
 
 function EstimateCost() {
   return (
@@ -36,11 +36,15 @@ function EstimateCost() {
               label={options.fields.phoneNumber.title}
               variant="outlined"
             />
-            <TextField
-              id="outlined-basic"
-              label={options.fields.description.title}
-              variant="outlined"
-            />
+            <FormControl fullWidth sx={{ m: 1 }}>
+              <TextField
+                id="outlined-basic"
+                label={options.fields.description.title}
+                variant="outlined"
+                multiline
+                rows={4}
+              />
+            </FormControl>
             <Button size="large" variant="contained">
               {options.buttons.send.title}
             </Button>
@@ -48,7 +52,7 @@ function EstimateCost() {
         </Box>
       </Box>
     </>
-  )
+  );
 }
 
 export default EstimateCost;

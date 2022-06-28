@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 //styles
 import { createStyles, makeStyles } from "@mui/styles";
 import { Theme } from "@mui/material/styles";
@@ -9,9 +9,21 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 //image assets
-import logo from "./assets/cuco-logo.png";
+import logo from "../assets/cuco-logo.png";
 //static content
-import {options} from "../staticInfo/header";
+import { options } from "../staticInfo/header";
+import {
+  Divider,
+  Drawer,
+  IconButton,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+
+const drawerWidth = 240;
 
 interface HeaderProps {
   isMainPage: boolean;
@@ -20,7 +32,7 @@ interface HeaderProps {
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     logo: {
-      maxWidth: 120,
+      maxWidth: 240,
     },
     menuButton: {
       color: "#fff",
@@ -28,92 +40,100 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const mainHeader = (classes: any) => {
-  return (
-    <React.Fragment>
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar
-          position="relative"
-          color="transparent"
-          elevation={0}
-          sx={{ pt: 4 }}
-        >
-          <Toolbar>
-            <img src={logo} alt="Cuco Arts!" className={classes.logo} />
-            <Typography
-              variant="h6"
-              component="div"
-              sx={{ flexGrow: 1 }}
-            ></Typography>
-            {options.map(
-              (option:any) => (
-                <Button className={classes.menuButton} color={"neutral"}>
-                  {option.title}
-                </Button>
-              )
-            )}
-            <Button
-              className={classes.menuButton}
-              color={"neutral"}
-              variant="outlined"
-            >
-              {" "}
-              Pre-Registro
-            </Button>
-          </Toolbar>
-        </AppBar>
-      </Box>
-    </React.Fragment>
-  );
-};
-
-const secondaryHeader = (classes: any) => {
-  return (
-    <React.Fragment>
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar
-          position="relative"
-          color="transparent"
-          elevation={0}
-          sx={{ pt: 4 }}
-        >
-          <Toolbar>
-            <img src={logo} alt="Cuco Arts!" className={classes.logo} />
-            <Typography
-              variant="h6"
-              component="div"
-              sx={{ flexGrow: 1 }}
-            ></Typography>
-            {options.map(
-              (option:any) => (
-                <Button className={classes.menuButton} color={"neutral"}>
-                  {option.title}
-                </Button>
-              )
-            )}
-            <Button
-              className={classes.menuButton}
-              color={"neutral"}
-              variant="outlined"
-            >
-              {" "}
-              Pre-Registro
-            </Button>
-          </Toolbar>
-        </AppBar>
-      </Box>
-    </React.Fragment>
-  );
-};
-
 export default function Header(props: HeaderProps) {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);
+  };
+
+  const drawer = (
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+      <Typography variant="h6" sx={{ my: 2 }}>
+        Cuco Arts
+      </Typography>
+      <Divider />
+      <List>
+        {options.map((item, i) => (
+          <ListItem key={i} disablePadding>
+            <ListItemButton sx={{ textAlign: "center" }} href={item.to}>
+              <ListItemText primary={item.title} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+    </Box>
+  );
+
   const classes = useStyles();
   const { isMainPage } = props;
   return (
     <>
-      {isMainPage
-        ? mainHeader(classes)
-        : secondaryHeader(classes)}
+      <AppBar
+        component="nav"
+        position="static"
+        color={isMainPage ? "transparent" : "primary"}
+        elevation={0}
+        sx={isMainPage ? { pt: 4 } : { backgroundColor: "#111" }}
+      >
+        <Toolbar>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            sx={{ mr: 2, display: { sm: "none" } }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <img src={logo} alt="Cuco Arts!" className={classes.logo} />
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+          ></Typography>
+          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+            {options.map((option: any, i) => (
+              <Button
+                key={i}
+                className={classes.menuButton}
+                color={"neutral"}
+                href={option.to}
+                size="small"
+              >
+                {option.title}
+              </Button>
+            ))}
+          </Box>
+          <Button
+            className={classes.menuButton}
+            color={"neutral"}
+            variant="outlined"
+            size="small"
+          >
+            Pre-Registro
+          </Button>
+        </Toolbar>
+      </AppBar>
+      <Box component="nav">
+        <Drawer
+          variant="temporary"
+          open={mobileOpen}
+          onClose={handleDrawerToggle}
+          ModalProps={{
+            keepMounted: true, // Better open performance on mobile.
+          }}
+          sx={{
+            display: { xs: "block", sm: "none" },
+            "& .MuiDrawer-paper": {
+              boxSizing: "border-box",
+              width: drawerWidth,
+            },
+          }}
+        >
+          {drawer}
+        </Drawer>
+      </Box>
     </>
   );
 }

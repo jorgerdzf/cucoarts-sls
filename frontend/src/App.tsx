@@ -1,7 +1,13 @@
 import { createTheme, ThemeProvider } from '@mui/material';
 import React from 'react';
+import { Routes, Route } from "react-router-dom";
 import './App.css';
+import Contact from './components/Contact';
+import Privacy from './components/Privacy';
+import Services from './components/Services';
 import Home from './Home';
+import Galery from './shared/Galery';
+import Portfolio from './shared/Portfolio';
 
 declare module '@mui/material/styles' {
   interface Theme {
@@ -26,7 +32,7 @@ declare module '@mui/material/styles' {
 // Update the Button's color prop options
 declare module '@mui/material/Button' {
   interface ButtonPropsColorOverrides {
-    neutral: true;
+    neutral: true;    
   }
 }
 
@@ -52,7 +58,14 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
-        <Home></Home>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/galery' element={<Galery />} />
+          <Route path='/portfolio' element={<Portfolio />} />
+          <Route path='/privacy' element={<Privacy />} />
+          <Route path='/services' element={<Services />} />
+        </Routes>
       </div>
     </ThemeProvider>
   );

@@ -2,10 +2,18 @@ import { AppBar, Toolbar, Typography } from "@mui/material";
 import React from "react";
 import { texts } from "../staticInfo/footer";
 
-export default function Footer() {
+interface FooterProps {
+  isMainPage: boolean;
+}
+
+export default function Footer(props: FooterProps) {
+  const { isMainPage } = props;
   return (
     <React.Fragment>
-      <AppBar position="static">
+      <AppBar 
+        position="static"
+        sx={isMainPage ? { pt: 4 } : { backgroundColor: "#111" }}
+        >
         <Toolbar sx={{ justifyContent: "space-between" }}>
           <div>
             <Typography variant="body1" component="div" sx={{ flexGrow: 1 }}>

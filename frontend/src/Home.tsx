@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme: Theme) =>
     headerBox: {
       backgroundImage: `url(${img1})`,
       backgroundSize: "cover",
-      minHeight: 600,
+      height: 800,
     },
     s1Box: {
       backgroundImage: `url(${img1})`,
@@ -52,18 +52,18 @@ const useStyles = makeStyles((theme: Theme) =>
 export default function Home() {
   const classes = useStyles();
   return (
-    <Container maxWidth="lg">
-      <Box className={classes.headerBox} sx={{ flexGrow: 1 }}>
+    <>
+      <Box className={classes.headerBox}>
         <Header isMainPage={true} />
         <Grid
           container
           direction="row"
-          justifyContent="flex-start"
-          alignItems="center"
-          sx={{ pt: 16 }}
+          justifyContent="space-around"
+          alignItems="flex-end"
+          pt={32}
         >
-          <Grid item xs={6}>
-            <Box sx={{ pl: 8, textAlign: "left" }}>
+          <Grid item>
+            <Box sx={{ pl: 6, textAlign: "left" }}>
               <Typography variant="h2" className={classes.headerText}>
                 {texts.t1}
               </Typography>
@@ -77,14 +77,12 @@ export default function Home() {
               </Link>
             </Box>
           </Grid>
-          <Grid item xs={6}>
-            <Box sx={{ pl: 8 }}>
-              <img src={img2} alt="Cuco Arts!" className={classes.img2} />
-            </Box>
+          <Grid item>
+            <img src={img2} alt="Cuco Arts!" className={classes.img2} />
           </Grid>
         </Grid>
       </Box>
-      <Box className={classes.s1Box} sx={{ mt: 6 }}>
+      <Box className={classes.s1Box} sx={{ mt: 2 }}>
         <Grid
           container
           direction="row"
@@ -98,24 +96,20 @@ export default function Home() {
           </Grid>
         </Grid>
       </Box>
-      <Box sx={{ pl: 8, pt: 6, textAlign: "left" }}>
+      <Container maxWidth="xl">
+        <br></br>
         <ServiceCards />
-      </Box>
-      <Box sx={{ pl: 8, pt: 6 }}>
+        <br></br>
         <Galery />
-      </Box>
-      <Box sx={{ pl: 8, pt: 6 }}>
+        <br></br>
         <Portfolio />
-      </Box>
-      <Box sx={{ pl: 8, pt: 6 }}>
+        <br></br>
         <ContactForm />
-      </Box>
-      <Box sx={{ pl: 8, pt: 6 }}>
+        <br></br>
         <SocialMedia />
-      </Box>
-      <Box sx={{ pt: 6 }}>
-        <Footer />
-      </Box>
-    </Container>
+        <br></br>
+      </Container>
+      <Footer isMainPage={true} />
+    </>
   );
 }
