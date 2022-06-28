@@ -1,10 +1,9 @@
-import { Box, Button, TextField, Typography } from "@mui/material";
-import React from "react";
-import { options, texts } from "../staticInfo/contact";
+import { Box, Typography, TextField, Button } from '@mui/material';
+import { options, texts } from '../staticInfo/estimateCost';
 
-export default function ContactForm() {
+function EstimateCost() {
   return (
-    <React.Fragment>
+    <>
       <Box sx={{ textAlign: "left" }}>
         <Box sx={{ textAlign: "left" }}>
           <Typography variant="h4">{texts.t1}</Typography>
@@ -32,22 +31,24 @@ export default function ContactForm() {
               label={options.fields.email.title}
               variant="outlined"
             />
-             <TextField
+            <TextField
               id="outlined-basic"
               label={options.fields.phoneNumber.title}
               variant="outlined"
             />
-             <TextField
+            <TextField
               id="outlined-basic"
               label={options.fields.description.title}
               variant="outlined"
             />
             <Button size="large" variant="contained">
-              {options.buttons.subscribe.title}
+              {options.buttons.send.title}
             </Button>
           </Box>
         </Box>
       </Box>
-    </React.Fragment>
-  );
+    </>
+  )
 }
+
+export default EstimateCost;
