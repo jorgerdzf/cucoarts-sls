@@ -5,18 +5,15 @@ import { Theme } from "@mui/material/styles";
 //material components
 import {
   Box,
-  Button,
   Container,
   Grid,
   ImageList,
   ImageListItem,
   Link,
-  Paper,
   Typography,
 } from "@mui/material";
 //image assets
 import img1 from "./assets/landing-img-1.png";
-import img2 from "./assets/landing-img-2.png";
 //static info
 import { texts, carousel } from "./staticInfo/home";
 // 3rd patry libraries
