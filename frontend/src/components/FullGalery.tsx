@@ -9,7 +9,7 @@ function FullGalery() {
     <>
       <Header isMainPage={false}></Header>
       <Container sx={{ pt: 12, pb: 12 }}>
-        <Galery></Galery>
+        <Galery isFullGalery={true}></Galery>
       </Container>
       <Footer isMainPage={false}></Footer>
     </>

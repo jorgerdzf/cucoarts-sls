@@ -27,12 +27,12 @@ export default function ServiceCards() {
         >
           {cardsContent.map((card, i) => (
             <Grid item key={i}>
-              <Card sx={{ maxWidth: 300 }}>
+              <Card sx={{ maxWidth: 400 }}>
                 <CardMedia
                   component="img"
                   alt="services"
-                  height="140"
-                  image={require(`../assets/service-img-1.png`)}
+                  height="400"
+                  image={card.imageUrl}
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">

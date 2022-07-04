@@ -16,6 +16,7 @@ import {
   Divider,
   Drawer,
   IconButton,
+  Link,
   List,
   ListItem,
   ListItemButton,
@@ -48,16 +49,23 @@ export default function Header(props: HeaderProps) {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+    <Box
+      onClick={handleDrawerToggle}
+      sx={{ textAlign: "center" }}
+    >
       <Typography variant="h6" sx={{ my: 2 }}>
         Cuco Arts
       </Typography>
       <Divider />
-      <List>
+      <List key={'mainMenu'}>
         {options.map((item, i) => (
           <ListItem key={i} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }} href={item.to}>
-              <ListItemText primary={item.title} />
+            <ListItemButton
+              key={item.to}
+              sx={{ textAlign: "center" }}
+              href={item.to}
+            >
+              <ListItemText key={item.title} primary={item.title} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -86,7 +94,9 @@ export default function Header(props: HeaderProps) {
           >
             <MenuIcon />
           </IconButton>
-          <img src={logo} alt="Cuco Arts!" className={classes.logo} />
+          <Link href="/">
+            <img src={logo} alt="Cuco Arts!" className={classes.logo} />
+          </Link>
           <Typography
             variant="h6"
             component="div"
@@ -95,19 +105,24 @@ export default function Header(props: HeaderProps) {
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {options.map((option: any, i) => (
               <>
-                {option.enabled ? (<Button
-                key={i}
-                className={classes.menuButton}
-                color={"neutral"}
-                href={option.to}
-                size="small"
-              >
-                {option.title}
-              </Button>) : (null) }
+                {option.enabled ? (
+                  <Button
+                    key={i}
+                    className={classes.menuButton}
+                    color={"neutral"}
+                    href={option.to}
+                    size="small"
+                  >
+                    {option.title}
+                  </Button>
+                ) : (
+                  <></>
+                )}
               </>
             ))}
           </Box>
           <Button
+            key={"pre-registro"}
             className={classes.menuButton}
             color={"neutral"}
             variant="outlined"
@@ -119,6 +134,7 @@ export default function Header(props: HeaderProps) {
       </AppBar>
       <Box component="nav">
         <Drawer
+          key="drawer"
           variant="temporary"
           open={mobileOpen}
           onClose={handleDrawerToggle}

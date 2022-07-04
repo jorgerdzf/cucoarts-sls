@@ -3,13 +3,24 @@ import React from "react";
 import { createStyles, makeStyles } from "@mui/styles";
 import { Theme } from "@mui/material/styles";
 //material components
-import { Box, Container, Grid, Link, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Container,
+  Grid,
+  ImageList,
+  ImageListItem,
+  Link,
+  Paper,
+  Typography,
+} from "@mui/material";
 //image assets
 import img1 from "./assets/landing-img-1.png";
 import img2 from "./assets/landing-img-2.png";
 //static info
-import { texts } from "./staticInfo/home";
-
+import { texts, carousel } from "./staticInfo/home";
+// 3rd patry libraries
+import Carousel from "react-material-ui-carousel";
 //components
 import Header from "./shared/Header";
 import ServiceCards from "./shared/ServiceCards";
@@ -49,6 +60,21 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
+function Item(props: any) {
+  return (
+      <ImageList sx={{ overflow:'hidden' }} cols={1} rowHeight={400}>
+        <ImageListItem>
+          <img
+            src={`${props.item.img}?w=164&h=164&fit=crop&auto=format`}
+            srcSet={`${props.item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+            alt={props.item.name}
+            loading='lazy'
+          />
+        </ImageListItem>
+      </ImageList>
+  );
+}
+
 export default function Home() {
   const classes = useStyles();
   return (
@@ -58,8 +84,8 @@ export default function Home() {
         <Grid
           container
           direction="row"
-          justifyContent="space-around"
-          alignItems="flex-end"
+          justifyContent="space-evenly"
+          alignItems="center"
           pt={32}
         >
           <Grid item>
@@ -78,7 +104,11 @@ export default function Home() {
             </Box>
           </Grid>
           <Grid item>
-            <img src={img2} alt="Cuco Arts!" className={classes.img2} />
+              <Carousel height={400} sx={{width:600}}>
+                {carousel.map((item, i) => (
+                  <Item key={i} item={item} />
+                ))}
+              </Carousel>
           </Grid>
         </Grid>
       </Box>
@@ -98,17 +128,25 @@ export default function Home() {
       </Box>
       <Container maxWidth="xl">
         <br></br>
+        <br></br>
         <ServiceCards />
         <br></br>
-        <Galery />
+        <br></br>
+        <Galery isFullGalery={false} />
+        <br></br>
         <br></br>
         <Portfolio />
         <br></br>
+        <br></br>
         <ContactForm />
+        <br></br>
         <br></br>
         <SocialMedia />
         <br></br>
+        <br></br>
       </Container>
+      <br></br>
+      <br></br>
       <Footer isMainPage={true} />
     </>
   );

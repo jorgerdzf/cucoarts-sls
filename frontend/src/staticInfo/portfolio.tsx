@@ -1,15 +1,15 @@
 const images = [
   {
-    img: "https://images.unsplash.com/photo-1533827432537-70133748f5c8",
-    title: "Hats",
+    img: "https://cucoarts-image-assets.s3.us-east-2.amazonaws.com/portfolio/Producci%C3%B3n/comercial+taller+gemma+oleos.jpg",
+    title: "Produccion",
   },
   {
-    img: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62",
-    title: "Honey",
+    img: "https://cucoarts-image-assets.s3.us-east-2.amazonaws.com/portfolio/Producci%C3%B3n/expo+virtual+asart+4.jpg",
+    title: "Produccion",
   },
   {
-    img: "https://images.unsplash.com/photo-1516802273409-68526ee1bdd6",
-    title: "Basketball",
+    img: "https://cucoarts-image-assets.s3.us-east-2.amazonaws.com/portfolio/Producci%C3%B3n/video+podcast+ancestros+3.JPG",
+    title: "Produccion",
   },
 ];
 

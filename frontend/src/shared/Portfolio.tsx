@@ -14,7 +14,7 @@ function Portfolio() {
       <Box sx={{ textAlign: "left" }}>
         <Typography variant="h4">{texts.t1}</Typography>
         <Typography variant="body1">{texts.t2}</Typography>
-        <ImageList sx={{ height: 350 }} cols={3} rowHeight={164}>
+        <ImageList sx={{ height: 250, overflow:'hidden' }} cols={3} rowHeight={120}>
           {images.map((item) => (
             <ImageListItem key={item.img}>
               <img
@@ -27,7 +27,7 @@ function Portfolio() {
           ))}
         </ImageList>
       </Box>
-      <Button variant="contained">Ver Mas</Button>
+      <Button variant="contained" href='/portfolio'>Ver Mas</Button>
     </>
   );
 }
