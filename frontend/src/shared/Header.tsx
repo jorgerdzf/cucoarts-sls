@@ -121,7 +121,7 @@ export default function Header(props: HeaderProps) {
               </>
             ))}
           </Box>
-          <Button
+          {/* <Button
             key={"pre-registro"}
             className={classes.menuButton}
             color={"neutral"}
@@ -129,7 +129,7 @@ export default function Header(props: HeaderProps) {
             size="small"
           >
             Pre-Registro
-          </Button>
+          </Button> */}
         </Toolbar>
       </AppBar>
       <Box component="nav">

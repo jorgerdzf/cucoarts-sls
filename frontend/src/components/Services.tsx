@@ -87,20 +87,20 @@ function Services() {
               justifyContent="center"
               alignItems="center"
             >
-              <Grid item sx={{ pt: 2 }}>
-                <Button variant="contained">
+              <Grid item sx={{ pt: 4 }}>
+                <Button variant="contained" href="https://forms.gle/XfhCkYQjLHzKGD9n6" target="_blank">
                   <BookmarksIcon /> &nbsp;
                   {texts.t6}
                 </Button>
               </Grid>
-              <Grid item sx={{ pt: 2 }}>
-                <Button variant="contained">
+              <Grid item sx={{ pt: 4 }}>
+                <Button variant="contained" href='/portfolio'>
                   <BookmarksIcon /> &nbsp;
                   {texts.t7}
                 </Button>
               </Grid>
-              <Grid item sx={{ pt: 2 }}>
-                <Button variant="contained">
+              <Grid item sx={{ pt: 4 }}>
+                <Button variant="contained" href='/galery'>
                   <BookmarksIcon /> &nbsp;
                   {texts.t8}
                 </Button>
@@ -109,12 +109,10 @@ function Services() {
           </Grid>
         </Grid>
         <br></br>
-        <Portfolio />
-        <br></br>
-        <EstimateCost />
-        <br></br>
       </Container>
-
+      <br></br>
+      <br></br>
+      <br></br>
       <Footer isMainPage={false} />
     </>
   );

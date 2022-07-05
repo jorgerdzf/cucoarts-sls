@@ -2,6 +2,7 @@ import { createTheme, ThemeProvider } from '@mui/material';
 import React from 'react';
 import { Routes, Route } from "react-router-dom";
 import './App.css';
+import Conditions from './components/Conditions';
 import Contact from './components/Contact';
 import FullGalery from './components/FullGalery';
 import FullPortfolio from './components/FullPortfolio';
@@ -60,6 +61,7 @@ function App() {
       <div className="App">
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/conditions' element={<Conditions/>} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/galery' element={<FullGalery />} />
           <Route path='/portfolio' element={<FullPortfolio />} />

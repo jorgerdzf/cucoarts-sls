@@ -43,10 +43,11 @@ export default function ServiceCards() {
                   </Typography>
                 </CardContent>
                 <CardActions sx={{ justifyContent: "center", p: 1, m: 1 }}>
-                  <Button size="small" variant="contained">
+                  <Button size="small" variant="contained" href={card.button1Url}
+                  sx={{m:1}} target='_blank'>
                     {card.button1Title}
                   </Button>
-                  <Button size="small" variant="contained">
+                  <Button size="small" variant="contained" href={card.button2Url}>
                     {card.button2Title}
                   </Button>
                 </CardActions>

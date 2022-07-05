@@ -72,7 +72,7 @@ function Galery(props: GaleryProps) {
         <Typography variant="body1">{texts.t2}</Typography>
         {imagesToPresent(props.isFullGalery)}
       </Box>
-      <Button variant="contained" href="/galery">Ver Mas </Button>
+      {!props.isFullGalery && <Button variant="contained" href="/galery">Ver Mas </Button>}
     </>
   );
 }

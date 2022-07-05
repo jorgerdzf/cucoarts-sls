@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme: Theme) =>
       backgroundSize: "cover",
     },
     links: {
-      color: "#bdc8f0",
+      color: "#fff",
     },
   })
 );
@@ -95,7 +95,8 @@ export default function Home() {
                 {texts.t2}
               </Typography>
               <br />
-              <Link href="#" className={classes.links}>
+              <Link href="https://www.instagram.com/p/CffJRhXgugs/" target={'_blank'} 
+              sx={{color:'#fff', fontSize:24}}>
                 {texts.t3}
               </Link>
             </Box>
@@ -132,10 +133,14 @@ export default function Home() {
         <Galery isFullGalery={false} />
         <br></br>
         <br></br>
-        <Portfolio />
+        <Portfolio isFullPortfolio={false} />
+        <br></br>
+        <br></br>
         <br></br>
         <br></br>
         <ContactForm />
+        <br></br>
+        <br></br>
         <br></br>
         <br></br>
         <SocialMedia />

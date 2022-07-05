@@ -16,7 +16,7 @@ import Link from "@mui/material/Link";
 export default function SocialMedia() {
   return (
     <React.Fragment>
-      <Box sx={{ textAlign: "left" }}>
+      <Box sx={{ textAlign: "center" }}>
         <Typography variant="h4">{texts.t1}</Typography>
         <Typography variant="body1">{texts.t2}</Typography>
       </Box>

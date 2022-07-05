@@ -9,7 +9,7 @@ function FullPortfolio() {
     <>
       <Header isMainPage={false}></Header>
       <Container sx={{ pt: 12, pb: 12 }}>
-        <Portfolio></Portfolio>
+        <Portfolio isFullPortfolio={true}></Portfolio>
       </Container>
       <Footer isMainPage={false}></Footer>
     </>
