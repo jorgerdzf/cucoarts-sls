@@ -56,13 +56,13 @@ function Portfolio(props: PortfolioProps) {
             <Box sx={{ textAlign: "center" }}>
               <Typography variant="h4">Art Hunting</Typography>
               <br></br>
-              <Typography variant="body1">
+              <Typography variant="body2">
                 ¿Qué es lo que te está llamando hoy? ¿Quieres crear algo
                 original o quieres buscar ideas? Platícanos tu caso y te
                 ayudamos a hacerlo realidad.
               </Typography>
               <br></br>
-              <ImageList variant="masonry" cols={3} gap={8}>
+              <ImageList variant="masonry" cols={3} gap={8} sx={{pt:4}}>
                 {artHunting.map((item, i) => (
                   <ImageListItem key={item.img}>
                     <img
@@ -96,13 +96,13 @@ function Portfolio(props: PortfolioProps) {
             <Box sx={{ textAlign: "center" }}>
               <Typography variant="h4">Murales</Typography>
               <br></br>
-              <Typography variant="body1">
+              <Typography variant="body2">
                 Arte urbano para espacios públicos y privados. Buscamos el
                 artista profesional ideal para tu proyecto y te ayudamos a
                 hacerlo realidad.
               </Typography>
               <br></br>
-              <ImageList variant="masonry" cols={3} gap={8}>
+              <ImageList variant="masonry" cols={3} gap={8} sx={{pt:4}}>
                 {murals.map((item, i) => (
                   <ImageListItem key={item.img}>
                     <img
@@ -136,13 +136,13 @@ function Portfolio(props: PortfolioProps) {
             <Box sx={{ textAlign: "center" }}>
               <Typography variant="h4">Producción</Typography>
               <br></br>
-              <Typography variant="body1">
+              <Typography variant="body2">
                 Para personas o negocios: Organizamos y lanzamos eventos
                 culturales y proyectos en video desde cobertura o entrevistas
                 personales.
               </Typography>
               <br></br>
-              <ImageList variant="masonry" cols={3} gap={8}>
+              <ImageList variant="masonry" cols={3} gap={8} sx={{pt:4}}>
                 {production.map((item, i) => (
                   <ImageListItem key={item.img}>
                     <img
@@ -176,12 +176,12 @@ function Portfolio(props: PortfolioProps) {
             <Box sx={{ textAlign: "center" }}>
               <Typography variant="h4">Eventos</Typography>
               <br></br>
-              <Typography variant="body1">
+              <Typography variant="body2">
                 Te presentamos un poco de los eventos que hemos organizado para
                 nuestros clientes.
               </Typography>
               <br></br>
-              <ImageList variant="masonry" cols={3} gap={8}>
+              <ImageList variant="masonry" cols={3} gap={8} sx={{pt:4}}>
                 {events.map((item, i) => (
                   <ImageListItem key={item.img}>
                     <img
