@@ -6,7 +6,7 @@
       button1Title: "Cotizar",
       button1Url: "https://forms.gle/XfhCkYQjLHzKGD9n6",
       button2Title: "Ver Galeria",
-      button2Url: "/portfolio#ArtHunting",
+      button2Url: "/portfolio/#ArtHunting",
     },
     {
       title: "Murales",
@@ -15,7 +15,7 @@
       button1Title: "Cotizar",
       button1Url: "https://forms.gle/XfhCkYQjLHzKGD9n6",
       button2Title: "Ver Galeria",
-      button2Url: "/portfolio#Murals",
+      button2Url: "/portfolio/#Murals",
     },
     {
       title: "Producción",
@@ -24,7 +24,7 @@
       button1Title: "Cotizar",
       button1Url: "https://forms.gle/XfhCkYQjLHzKGD9n6",
       button2Title: "Ver Galeria",
-      button2Url: "/portfolio#Productions",
+      button2Url: "/portfolio/#Productions",
     },
   ];
   
