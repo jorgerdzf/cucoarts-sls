@@ -51,24 +51,27 @@ export default function Header(props: HeaderProps) {
   const drawer = (
     <Box
       onClick={handleDrawerToggle}
-      sx={{ textAlign: "center" }}
+      sx={{ textAlign: "center"}}
     >
-      <Typography variant="h6" sx={{ my: 2 }}>
-        Cuco Arts
-      </Typography>
+      <Link href="/">
+            <img src={logo} alt="Cuco Arts!" />
+          </Link>
       <Divider />
       <List key={'mainMenu'}>
         {options.map((item, i) => (
-          <ListItem key={i} disablePadding>
-            <ListItemButton
-              key={item.to}
-              sx={{ textAlign: "center" }}
-              href={item.to}
-            >
-              <ListItemText key={item.title} primary={item.title} />
-            </ListItemButton>
-          </ListItem>
-        ))}
+           item.enabled && (
+            <ListItem key={i} disablePadding>
+              <ListItemButton
+                key={item.to}
+                sx={{ textAlign: "left", color:'#fff' }}
+                href={item.to}
+              >
+                <ListItemText key={item.title} primary={item.title} />
+              </ListItemButton>
+            </ListItem>
+           )
+            )
+          )}
       </List>
     </Box>
   );
@@ -146,6 +149,7 @@ export default function Header(props: HeaderProps) {
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,
+              backgroundColor:'#111',
             },
           }}
         >

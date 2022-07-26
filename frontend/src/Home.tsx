@@ -105,7 +105,7 @@ export default function Home() {
               </Box>
             </Grid>
             <Grid item>
-              <Carousel height={500} sx={{width:600}}>
+              <Carousel height={500} sx={{width:500}}>
                 {carousel.map((item, i) => (
                   <Item key={i} item={item} />
                 ))}

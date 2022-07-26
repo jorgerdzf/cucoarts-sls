@@ -1,5 +1,5 @@
 import { Box, Button, IconButton, TextField, Typography } from "@mui/material";
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { options, texts } from "../staticInfo/contact";
 import emailjs from "@emailjs/browser";
 import { useForm } from "react-hook-form";
