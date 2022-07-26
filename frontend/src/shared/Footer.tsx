@@ -12,7 +12,7 @@ export default function Footer(props: FooterProps) {
     <React.Fragment>
       <AppBar
         position="static"
-        sx={isMainPage ? { pt: 4 } : { backgroundColor: "#111" }}
+        sx={isMainPage ? { pt:1 } : { backgroundColor: "#111" }}
       >
         <Toolbar sx={{ justifyContent: "space-between" }}>
           <div>

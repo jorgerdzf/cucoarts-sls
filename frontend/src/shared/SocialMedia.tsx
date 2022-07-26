@@ -9,7 +9,7 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 import MusicNoteIcon from "@mui/icons-material/MusicNote";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import CloudIcon from '@mui/icons-material/Cloud';
-import PodcastsIcon from '@mui/icons-material/Podcasts';
+import ContactlessIcon from '@mui/icons-material/Contactless';
 import { texts } from "../staticInfo/socialMedia";
 import Link from "@mui/material/Link";
 
@@ -46,7 +46,7 @@ export default function SocialMedia() {
           <CloudIcon sx={{ fontSize: 100 }} />
         </Link>
         <Link href="https://open.spotify.com/show/6BLIwsjTJ0Trd0ANcU4p2P?si=186485fd1de948f6" target="_blank">
-          <PodcastsIcon sx={{ fontSize: 100 }} />
+          <ContactlessIcon sx={{ fontSize: 100, transform: 'rotate(270deg)' }} />
         </Link>
         <Link href="https://wa.me/+528120321492" target="_blank">
           <WhatsAppIcon sx={{ fontSize: 100 }} />

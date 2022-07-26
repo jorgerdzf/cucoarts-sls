@@ -87,7 +87,7 @@ function Privacy() {
             titular de los datos tiene derecho a revocar en cualquier momento el
             consentimiento que otorgó al responsable para el tratamiento de sus
             datos personales. Esto se podrá llevar a cabo solicitándolo en
-            nuestro CORREO ELECTRÓNICO costumer.service@cucoarts.com, o a
+            nuestro CORREO ELECTRÓNICO hello@cucoarts.com, o a
             nuestro domicilio antes citado, mediante la solicitud
             correspondiente, que se anexa en el siguiente link: FORMULARIO DE
             EJERCICIO DE DERECHOS ARCO, REVOCACIÓN DEL CONSENTIMIENTO Y/O
@@ -138,7 +138,7 @@ function Privacy() {
             PERSONALES: (art. 16) “CuCo”, y sus AFILIADAS quienes son
             responsables del tratamiento de sus datos personales,. Puede
             contactarnos por alguna duda, comentario, queja o sugerencia por
-            medio de nuestro correo electrónico: costumer.service@cucoarts.com
+            medio de nuestro correo electrónico: hello@cucoarts.com
           </p>
           <p>
             e) LIMITACIÓN DEL USO DE DIVULGACIÓN DE SUS DATOS PERSONALES: (art.
@@ -146,7 +146,7 @@ function Privacy() {
             por teléfono fijo o celulares, así como dejar de recibir correo
             postal publicitario (que puede contener instrucciones para optar por
             no participar) y correo electrónico, comunicándose por medio de
-            nuestro correo electrónico: costumer.service@cucoarts.com
+            nuestro correo electrónico: hello@cucoarts.com
           </p>
           <p>
             f) MEDIOS PARA EJERCER LOS DERECHOS DE ACCESO, RECTIFICACIÓN,

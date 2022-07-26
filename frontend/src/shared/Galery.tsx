@@ -83,9 +83,9 @@ function Galery(props: GaleryProps) {
           justifyContent="space-between"
           alignItems="center"
         >
-          <Grid item sx={{maxWidth: 400}}>
+          <Grid item sx={props.isFullGalery ? {maxWidth: 400} : {maxWidth: 800}}>
             <Typography variant="h4">{texts.t1}</Typography>
-            <br></br>
+            {props.isFullGalery && <br></br>}
             <Typography variant="body2">{texts.t2}</Typography>
           </Grid>
           <Grid item>

@@ -3,7 +3,7 @@ const texts = {
   t2: "Cultural Collective (CUCO) es un lugar para sorprendernos y crecer creativamente a través de la gran comunidad que ya existe a nuestro alrededor.",
   t3: "Ver reel",
   t4: "Descubre, Conecta y Crece junto a todo el talento que te rodea!",
-  t5: "¿Quieres conocernos mejor? - Te invitamos a leer nuestra historia",
+  t5: "¿Quieres conocernos mejor? - Te invitamos a leer nuestra ",
 };
 
 const carousel = [
