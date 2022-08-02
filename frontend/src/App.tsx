@@ -38,6 +38,11 @@ declare module '@mui/material/Button' {
 }
 
 const theme = createTheme({
+  typography: {
+    allVariants: {
+      fontFamily: "'Open Sans', sans-serif",
+    },
+  },
   palette: {
     primary: {
       main: '#490089',
