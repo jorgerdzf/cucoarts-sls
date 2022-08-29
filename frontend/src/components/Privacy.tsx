@@ -10,9 +10,11 @@ function Privacy() {
       <Container>
         <Box sx={{ textAlign: "justify", pt: 4, pb: 4 }}>
           <Typography variant="h4">AVISO DE PRIVACIDAD</Typography>
+          <br></br>
           <Typography variant="body1">
             FECHA DE ALTA EN SITIO WEB 01 JUNIO DE 2022
           </Typography>
+          <br></br>
           <p>
             WWW.CUCOARTS.COM/PRIVACIDAD AVISO DE PRIVACIDAD PARA LA PROTECCIÓN
             DE DATOS PERSONALES, “CuCo” Esta aviso se ajusta en su totalidad a
@@ -81,7 +83,7 @@ function Privacy() {
             (art. 15 y 16). A continuación hacemos una declaración en nuestro
             aviso de privacidad.
           </p>
-          <p>D E C L A R A C I O N E S:</p>
+          <Typography variant="h5">DECLARACIONES:</Typography>
           <p>
             a) REVOCACIÓN DEL CONSENTIMIENTO DE DATOS PERSONALES: (art. 8) El
             titular de los datos tiene derecho a revocar en cualquier momento el
