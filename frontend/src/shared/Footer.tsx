@@ -1,4 +1,4 @@
-import { AppBar, Link, Toolbar, Typography } from "@mui/material";
+import { AppBar, Grid, Link, Toolbar, Typography } from "@mui/material";
 import React from "react";
 import { texts } from "../staticInfo/footer";
 
@@ -14,20 +14,26 @@ export default function Footer(props: FooterProps) {
         position="static"
         sx={isMainPage ? { pt:1 } : { backgroundColor: "#111" }}
       >
-        <Toolbar sx={{ justifyContent: "space-between" }}>
-          <div>
-            <Typography variant="body1" component="div" sx={{ flexGrow: 1 }}>
+        <Toolbar>
+        <Grid
+          container
+          direction="row"
+          justifyContent="space-around"
+          alignItems="center"
+        >
+          <Grid item>
+            <Typography variant="body2" component="div" sx={{ flexGrow: 1, fontSize: 10 }}>
               {texts.t1}
             </Typography>
-          </div>
-          <div>
+          </Grid>
+          <Grid item>
             <Typography variant="body2" component="div" sx={{ flexGrow: 1 }}>
               <Link href={`mailto:${texts.t2}`} sx={{ color: "#fff" }}>
                 {texts.t2}
               </Link>
             </Typography>
-          </div>
-          <div>
+          </Grid>
+          <Grid item>
             {/* <Typography variant="body2" component="div" sx={{ flexGrow: 1 }}>
               <Link href="/conditions" sx={{ color: "#fff" }}>
                 {texts.t3}
@@ -38,7 +44,9 @@ export default function Footer(props: FooterProps) {
                 {texts.t4}
               </Link>
             </Typography>
-          </div>
+          </Grid>
+          
+          </Grid>
         </Toolbar>
       </AppBar>
     </React.Fragment>

@@ -22,7 +22,7 @@ const s3uri =
 const imagesToPresent = (isFullGalery: boolean) => {
   if (isFullGalery) {
     return (
-      <ImageList cols={5} rowHeight={240} sx={{pt:6}}>
+      <ImageList cols={3} rowHeight={240} sx={{pt:6}}>
         {fullGalery.map((item, i) => (
           <ImageListItem key={i} sx={{ p: 1 }}>
             <img

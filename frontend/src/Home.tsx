@@ -1,10 +1,11 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 //styles
 import { createStyles, makeStyles } from "@mui/styles";
 import { Theme } from "@mui/material/styles";
 //material components
 import {
   Box,
+  Button,
   Container,
   Grid,
   ImageList,
@@ -26,6 +27,7 @@ import SocialMedia from "./shared/SocialMedia";
 import Footer from "./shared/Footer";
 import Portfolio from "./shared/Portfolio";
 import Galery from "./shared/Galery";
+import Instagram from "@mui/icons-material/Instagram";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -33,6 +35,7 @@ const useStyles = makeStyles((theme: Theme) =>
       backgroundImage: `url(${img1})`,
       backgroundSize: "cover",
       height: 900,
+      width: '100%'
     },
     s1Box: {
       backgroundImage: `url(${img1})`,
@@ -74,11 +77,28 @@ function Item(props: any) {
 
 export default function Home() {
   const classes = useStyles();
+  const [windowDimension, setWindowDimension] = useState({
+    winWidth: window.innerWidth
+  })
+
+  const detectSize = () => {
+    setWindowDimension({
+      winWidth: window.innerWidth,
+    });
+  }
+
+  useEffect(() => {
+    window.addEventListener('resize', detectSize);
+    return()=>{
+      window.removeEventListener('resize', detectSize);
+    }
+  });
+
   return (
     <>
       <Box className={classes.headerBox}>
         <Header isMainPage={true} />
-        <Box sx={{mt:10}}>
+        <Box sx={{mt:5, p:1}}>
           <Grid
             container
             direction="row"
@@ -95,17 +115,26 @@ export default function Home() {
                   {texts.t2}
                 </Typography>
                 <br />
-                <Link
+              </Box>
+              <Box sx={{ textAlign: "center" }}>
+              <Button
                   href="https://www.instagram.com/p/CffJRhXgugs/"
                   target={"_blank"}
-                  sx={{ color: "#fff", fontSize: 24 }}
+                  variant={"contained"}
+                  startIcon={<Instagram></Instagram>}
+                  sx={{ color: "#fff" }}
                 >
                   {texts.t3}
-                </Link>
+                </Button>
               </Box>
             </Grid>
             <Grid item>
-              <Carousel height={500} sx={{width:500}}>
+              <Carousel 
+              height={windowDimension.winWidth > 800 ? 500 : '100vw'}
+              sx={{
+                  pt: 2,
+                  width: windowDimension.winWidth > 800 ? 800 : '100vw', 
+                  }}>
                 {carousel.map((item, i) => (
                   <Item key={i} item={item} />
                 ))}
@@ -119,12 +148,12 @@ export default function Home() {
       <Box className={classes.s1Box}>
         <Grid
           container
-          direction="row"
-          justifyContent="center"
+          direction="column"
+          justifyContent="space-around"
           alignItems="center"
         >
-          <Grid item sx={{ fontStyle: "italic", pt:4 }}>
-            <Typography variant="h4">{texts.t4}</Typography>
+          <Grid item sx={{ fontStyle: "italic", mt: 2 }}>
+            <Typography variant="h5">{texts.t4}</Typography>
             {/* TODO: v2 agregar componente de historia <Typography variant="h5">{texts.t5}<Link sx={{color: '#fff'}}>historia</Link></Typography> */}
           </Grid>
         </Grid>

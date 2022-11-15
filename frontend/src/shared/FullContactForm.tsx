@@ -83,7 +83,7 @@ export default function FullContactForm() {
           <form onSubmit={handleSubmit(onSubmitFull)}>
             <Box sx={{ textAlign: "left", pt: 2 }}>
               <Grid container spacing={2}>
-                <Grid item xs={4}>
+                <Grid item xs={12} md={4}>
                   <TextField
                     error={errors.Name ? true : false}
                     id="Name"
@@ -93,7 +93,7 @@ export default function FullContactForm() {
                     {...register("Name", { required: true, maxLength: 80 })}
                   />
                 </Grid>
-                <Grid item xs={4}>
+                <Grid item xs={12} md={4}>
                   <TextField
                     error={errors.Email ? true : false}
                     id="Email"
@@ -106,7 +106,7 @@ export default function FullContactForm() {
                     })}
                   />
                 </Grid>
-                <Grid item xs={4}>
+                <Grid item xs={12} md={4}>
                   <TextField
                     error={errors.Phone ? true : false}
                     id="Phone"
